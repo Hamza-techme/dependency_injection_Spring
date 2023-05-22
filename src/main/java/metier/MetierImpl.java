@@ -5,20 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MetierImpl implements IMetier {
-
     private IDao dao;
-
     public MetierImpl(IDao dao) {
         this.dao = dao;
     }
-
     @Override
     public double calcul() {
         double tmp = dao.getData();
         double res = tmp * 5 + Math.cos(tmp * Math.PI) / 100;
         return res;
     }
-
     public void setDao(IDao dao) {
         this.dao = dao;
     }
